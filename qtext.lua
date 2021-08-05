@@ -1,9 +1,15 @@
 -- Emulate the newline created by print()
 local function emPrint(tex, monit)
     local term = monit or term
+    term.write(tex)
     local oX, oY = term.getCursorPos()
     local sX, sY = term.getSize()
-    if 
+    if sY == oY then
+       term.scroll(1)
+       term.setCursorPos(1, oY)
+    else
+       term.setCursorPos(1, oY + 1) 
+    end
 end
 
 -- Offset the cursor
