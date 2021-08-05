@@ -2,10 +2,7 @@
 function cursorOffset(x, y, monit)
     local term = monit or term
     local oX, oY = term.getCursorPos()
-    term.setCursorPos(
-        oX + x,
-        oY + y
-    )
+    term.setCursorPos(oX + x, oY + y)
 end
 
 -- Set cursor X and set cursor Y independently
@@ -28,8 +25,8 @@ function blit(tex, color, pri, monit)
     term.setBackgroundColor(color)
     if pri then
         term.write(tex)
-		term.setBackgroundColor(oldColor)
-		print("")
+	term.setBackgroundColor(oldColor)
+	print("")
     else
         term.write(tex)
     end
@@ -43,7 +40,7 @@ function tlit(tex, color, pri, monit)
     term.setTextColor(color)
     if pri then
         term.write(tex)
-		print("")
+	print("")
     else
         term.write(tex)
     end
