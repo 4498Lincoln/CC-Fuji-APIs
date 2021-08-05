@@ -1,3 +1,17 @@
+-- Emulate the newline created by print()
+function emPrint(tex, monit)
+    local term = monit or term
+    term.write(tex)
+    local oX, oY = term.getCursorPos()
+    local sX, sY = term.getSize()
+    if sY == oY then
+       term.scroll(1)
+       term.setCursorPos(1, oY)
+    else
+       term.setCursorPos(1, oY + 1) 
+    end
+end
+
 -- Offset the cursor
 function cursorOffset(x, y, monit)
     local term = monit or term
@@ -24,11 +38,11 @@ function blit(tex, color, pri, monit)
     local oldColor = term.getBackgroundColor()
     term.setBackgroundColor(color)
     if pri then
-        term.write(tex)
-	term.setBackgroundColor(oldColor)
-	print("")
+        emPrint(tex, term)
+	    term.setBackgroundColor(oldColor)
+	    print("")
     else
-        term.write(tex)
+        emPrint(tex, term)
     end
     term.setBackgroundColor(oldColor)
 end
@@ -39,10 +53,10 @@ function tlit(tex, color, pri, monit)
     local oldColor = term.getTextColor()
     term.setTextColor(color)
     if pri then
-        term.write(tex)
-	print("")
+        emPrint(tex, term)
+	    print("")
     else
-        term.write(tex)
+        emPrint(tex, term)
     end
     term.setTextColor(oldColor)
 end
