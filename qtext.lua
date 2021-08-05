@@ -1,3 +1,11 @@
+-- Emulate the newline created by print()
+local function emPrint(tex, monit)
+    local term = monit or term
+    local oX, oY = term.getCursorPos()
+    local sX, sY = term.getSize()
+    if 
+end
+
 -- Offset the cursor
 function cursorOffset(x, y, monit)
     local term = monit or term
