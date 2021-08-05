@@ -1,5 +1,5 @@
 -- Emulate the newline created by print()
-local function emPrint(tex, monit)
+function emPrint(tex, monit)
     local term = monit or term
     term.write(tex)
     local oX, oY = term.getCursorPos()
@@ -38,11 +38,11 @@ function blit(tex, color, pri, monit)
     local oldColor = term.getBackgroundColor()
     term.setBackgroundColor(color)
     if pri then
-        term.write(tex)
-	term.setBackgroundColor(oldColor)
-	print("")
+        emPrint(tex, term)
+	    term.setBackgroundColor(oldColor)
+	    print("")
     else
-        term.write(tex)
+        emPrint(tex, term)
     end
     term.setBackgroundColor(oldColor)
 end
@@ -53,10 +53,10 @@ function tlit(tex, color, pri, monit)
     local oldColor = term.getTextColor()
     term.setTextColor(color)
     if pri then
-        term.write(tex)
-	print("")
+        emPrint(tex, term)
+	    print("")
     else
-        term.write(tex)
+        emPrint(tex, term)
     end
     term.setTextColor(oldColor)
 end
