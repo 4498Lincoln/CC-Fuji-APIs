@@ -40,9 +40,8 @@ function blit(tex, color, pri, monit)
     if pri then
         emPrint(tex, term)
 	    term.setBackgroundColor(oldColor)
-	    print("")
     else
-        emPrint(tex, term)
+        term.write(tex, term)
     end
     term.setBackgroundColor(oldColor)
 end
@@ -54,9 +53,8 @@ function tlit(tex, color, pri, monit)
     term.setTextColor(color)
     if pri then
         emPrint(tex, term)
-	    print("")
     else
-        emPrint(tex, term)
+        term.write(tex, term)
     end
     term.setTextColor(oldColor)
 end
