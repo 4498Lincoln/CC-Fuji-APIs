@@ -5,7 +5,7 @@ APIs I made mainly for my personal use in ComputerCraft. This repository was sim
 
 ### Loading APIs
 
-In order to load an API in computercraft, use [os.loadAPI()](https://computercraft.info/wiki/Os.loadAPI) with a string containing the path to your API as an argument. For example, if an API file is called "coolutils.lua" and it is in the directory "/myAPIs," to load it, you would run the following line of code:
+In order to load an API in ComputerCraft, use [os.loadAPI()](https://computercraft.info/wiki/Os.loadAPI) with a string containing the path to your API as an argument. For example, if an API file is called "coolutils.lua" and it is in the directory "/myAPIs," to load it, you would run the following line of code:
 
 ```lua
 os.loadAPI("/myAPIs/coolutils.lua")
