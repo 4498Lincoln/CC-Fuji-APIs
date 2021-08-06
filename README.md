@@ -1,5 +1,5 @@
 # CC-Fuji-APIs
-APIs I made for my personal use in computercraft. This repository was simply made to organize these.
+APIs I made mainly for my personal use in computercraft. This repository was simply made to organize these. You may use these APIs too, if you want.
 
 ## Information
 
