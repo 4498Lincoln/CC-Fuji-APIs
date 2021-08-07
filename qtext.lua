@@ -58,3 +58,21 @@ function tlit(tex, color, pri, monit)
     end
     term.setTextColor(oldColor)
 end
+
+-- Simultaneous blit and tlit
+function btlit(tex, colorb, colort, pri, monit)
+    local term = monit or term
+    local oldColorB = term.getBackgroundColor()
+    local oldColorT = term.getTextColor()
+    term.setBackgroundColor(colorb)
+    term.setTextColor(colort)
+    if pri then
+        emPrint(tex, term)
+        term.setBackgroundColor(colorB)
+        term.setTextColor(oldColorT)
+    else
+        term.write(tex, term)
+    end
+    term.setBackgroundColor(colorB)
+    term.setTextColor(oldColorT)
+end
