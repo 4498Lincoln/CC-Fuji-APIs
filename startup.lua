@@ -54,10 +54,8 @@ for k, v in pairs(apiList) do
     if not os.loadAPI(fullDir) and doPrint.errors then
         print("Failed to load API " .. fullDir)
         doDelay("err")
-    else
-        if doPrint.general then
-            print("Loaded API " .. fullDir)
-            doDelay("gen")
-        end
+    elseif doPrint.general then
+        print("Loaded API " .. fullDir)
+        doDelay("gen")
     end
 end
