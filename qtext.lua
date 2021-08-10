@@ -68,11 +68,11 @@ function btlit(tex, colorb, colort, pri, monit)
     term.setTextColor(colort)
     if pri then
         emPrint(tex, term)
-        term.setBackgroundColor(colorB)
+        term.setBackgroundColor(oldColorB)
         term.setTextColor(oldColorT)
     else
         term.write(tex, term)
     end
-    term.setBackgroundColor(colorB)
+    term.setBackgroundColor(oldColorB)
     term.setTextColor(oldColorT)
 end
